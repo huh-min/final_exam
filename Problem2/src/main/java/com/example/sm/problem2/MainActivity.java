@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import java.util.ArrayList;
 
+import static android.R.attr.data;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     MyBaseAdapter adapter;
@@ -16,7 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // need something here
+
+        ArrayList<Employee> emp_list = new ArrayList<Employee>();
+
 
         adapter = new MyBaseAdapter(this, emp_list);
         listview = (ListView) findViewById(R.id.listView1) ;
@@ -33,11 +37,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.btn_inc:
-                // need something here
+
+
                 break;
 
             case R.id.btn_dec:
-                // need something here
+
                 break;
 
             case R.id.btn_store:

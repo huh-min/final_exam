@@ -19,7 +19,12 @@ public class MainActivity extends AppCompatActivity {
         Manager manager = new Manager();
 
         for(int i = 0 ; i < 10 ; i++){
-            Customer customer = new Customer("Customer" + i);
+            Customer customer = new Customer("Customer" + i) {
+                @Override
+                void work() {
+
+                }
+            };
             CustomerThread ct = new CustomerThread(customer);
             list.add(ct);
             manager.add_customer(customer);
@@ -29,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         for(CustomerThread ct : list){
 
-            try {
-                // need something here
-            } catch (InterruptedException e) { }
         }
 
         manager.sort();
@@ -63,14 +65,13 @@ abstract class Person{
 }
 
 
-class Customer extends Person{
+abstract class Customer extends Person{
 
     String name;
     Customer(String name){
         this.name = name;
     }
 
-    // need something here
 }
 
 
